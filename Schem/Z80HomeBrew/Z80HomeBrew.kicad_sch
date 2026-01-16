@@ -1,0 +1,578 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "5593e793-d133-45d0-a91e-72805049e474")
+	(paper "USLedger")
+	(lib_symbols)
+	(sheet
+		(at 23.495 31.115)
+		(size 45.72 17.145)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "3988d86f-c93e-49bc-9714-528a8b658c82")
+		(property "Sheetname" "Power"
+			(at 23.495 30.4034 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 23.495 48.8446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "~{MCU_POWER_OFF}" input
+			(at 23.495 38.1 180)
+			(uuid "a1399e53-6679-4154-bb71-e7e2388d9051")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{MCU_PW_OFF_RQ}" output
+			(at 69.215 38.1 0)
+			(uuid "de624966-7aad-4759-bd24-eca4ea9f9649")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Z80HomeBrew"
+				(path "/5593e793-d133-45d0-a91e-72805049e474"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 96.52 25.4)
+		(size 213.36 66.04)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a1a9379e-380a-453b-a773-3c2b5a71d396")
+		(property "Sheetname" "System Control"
+			(at 96.52 24.6884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SystemControl.kicad_sch"
+			(at 96.52 92.0246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "A0" input
+			(at 96.52 57.15 180)
+			(uuid "929245a2-975d-4cb5-84e7-e3a1c6a81cd6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CLK" input
+			(at 96.52 59.69 180)
+			(uuid "925484dc-7f07-4cac-a6c1-538086ae748c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USR_UART_RTS" input
+			(at 96.52 63.5 180)
+			(uuid "56465b84-bcff-4420-8701-b96103de7e2f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CLK_7M3728" input
+			(at 96.52 66.04 180)
+			(uuid "34165696-d05a-40e0-ba81-346e1405ffb8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CLK_1M8432" input
+			(at 96.52 69.85 180)
+			(uuid "662b4461-52de-4b43-9fef-83e6dd82daec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USR_UART_TX" output
+			(at 120.65 91.44 270)
+			(uuid "7635553b-9e4f-4a32-9559-d4e0981fa953")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "A1" input
+			(at 128.27 91.44 270)
+			(uuid "9bff7556-8c4c-4cd7-b1ca-4b2cbf6a9378")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USR_UART_DTR" output
+			(at 133.35 91.44 270)
+			(uuid "cbcb7708-8b88-4eb2-8c16-94cd63ba443b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EXT_UART_RTS" input
+			(at 139.7 91.44 270)
+			(uuid "5170e4bf-94bc-40e4-8f30-0ab92a21a8a0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CTC_TO1" output
+			(at 148.59 91.44 270)
+			(uuid "b02a931a-003f-46f2-ba9b-dd3ffee0a2fd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EXT_UART_DCD" input
+			(at 156.21 91.44 270)
+			(uuid "f3f6b47b-9881-479a-831d-266d5cd1c79b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EXT_UART_DTR" output
+			(at 309.88 53.34 0)
+			(uuid "b57dc71e-02be-4147-abd9-8e94a5c64265")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "M1" input
+			(at 309.88 46.99 0)
+			(uuid "32987070-95e6-4478-8457-1fa6b258b26e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "EXT_UART_RX" input
+			(at 309.88 41.91 0)
+			(uuid "d61752f5-798a-4e49-85c1-d8f7e0104ab3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USR_UART_DCD" input
+			(at 309.88 34.29 0)
+			(uuid "a47a9342-7ab5-4b88-ae5a-740cc012ff43")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_PRESENT" input
+			(at 157.48 25.4 90)
+			(uuid "07111541-2c63-43ce-a08d-5ef06a902867")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "D[0..7]" input
+			(at 140.97 25.4 90)
+			(uuid "c2584273-feab-413a-b437-5225b6390221")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CTC_TO2" output
+			(at 130.81 25.4 90)
+			(uuid "7e4daac0-ef2a-40b7-a218-05ba18c59093")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USR_UART_RX" input
+			(at 120.65 25.4 90)
+			(uuid "e34da853-5410-46c1-b78f-cd00a6929512")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CLK_14M7456" input
+			(at 114.3 25.4 90)
+			(uuid "e0865e5d-622d-49c0-9566-6715d4cf55d7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CLK_3M6864" input
+			(at 309.88 62.23 0)
+			(uuid "7b79ce4a-e7b3-4187-a710-b34e8b36716c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_PRESENT" input
+			(at 163.83 91.44 270)
+			(uuid "0821c68e-a447-463e-a187-18b6f9dad0db")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RD" input
+			(at 143.51 91.44 270)
+			(uuid "ad5849a1-04b7-4a25-8616-0dde1bf31130")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EXT_UART_TX" output
+			(at 96.52 50.8 180)
+			(uuid "35adadee-f513-4cde-8ca2-ff83dcd141b4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "EXT_UART_CTS" output
+			(at 96.52 29.21 180)
+			(uuid "e88ee211-b085-45b1-8d5a-b23b82739d6f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "IORQ" input
+			(at 96.52 53.34 180)
+			(uuid "a061d065-0c95-4561-8528-772646ee0841")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "INT" output
+			(at 124.46 91.44 270)
+			(uuid "e799a04c-7fd6-458e-b889-c6ce5d3aaf9f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USR_UART_CTS" output
+			(at 135.89 25.4 90)
+			(uuid "8afff478-c5cc-4d2b-be4d-fabb543720bd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "~{RESET}" output
+			(at 309.88 29.21 0)
+			(uuid "33f2b4ca-f780-425a-aa1e-c093b16b1c33")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "~{USB_CS}" output
+			(at 309.88 44.45 0)
+			(uuid "486c1dd4-9830-403d-9548-d4f1b7083914")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SPI_MOSI" output
+			(at 309.88 49.53 0)
+			(uuid "db0b26bb-7302-46a7-b4ad-d16c1d3f8ec9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "~{USB_RST}" output
+			(at 309.88 57.15 0)
+			(uuid "062f6bc0-7d05-41e4-8c08-9a357f2366ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "~{NMI}" output
+			(at 309.88 67.31 0)
+			(uuid "75d35e47-25ed-447a-99f7-47a0baec5ead")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "~{SD_CS}" output
+			(at 158.75 91.44 270)
+			(uuid "4ffe77ba-7792-435d-b902-1ddc0121d29e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USB_INT" input
+			(at 153.67 91.44 270)
+			(uuid "4c214f6d-d918-48de-94de-c148e294aaf4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SPI_CLK" output
+			(at 146.05 91.44 270)
+			(uuid "891bd4be-7cd3-4bef-8604-4ef0a47cb27e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{NMI_RQ}" input
+			(at 137.16 91.44 270)
+			(uuid "c50e1111-ff95-4fb3-9d23-03bdc324d6ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SPI_MISO" input
+			(at 130.81 91.44 270)
+			(uuid "ec49964e-ce26-4cad-bfea-b8ebcafe5439")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SD_BUSY" output
+			(at 111.76 91.44 270)
+			(uuid "94ed7374-3409-440a-a93b-d4f0bd58837b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{RESET_SW}" input
+			(at 96.52 41.91 180)
+			(uuid "d47eaec7-c6c6-4ff8-8556-73ec485cecb4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CE_SIO0" input
+			(at 201.93 91.44 270)
+			(uuid "06d34cd6-9ad8-4c7e-a1a3-c02217fd58ed")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{POWER_OFF}" output
+			(at 195.58 91.44 270)
+			(uuid "d91f61e9-87df-46aa-9e54-39a3cbb2f0f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{POWER_OFF_RQ}" input
+			(at 187.96 91.44 270)
+			(uuid "ec8b4c2f-f47a-4cbd-a621-34da448deb63")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CE_SIO1" input
+			(at 177.8 91.44 270)
+			(uuid "1dfc821f-20bf-4d9e-8ab7-3956d96dedc2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CE_CTC" input
+			(at 171.45 91.44 270)
+			(uuid "cb9ff4b9-3e5d-45ac-9d65-60458601fe8c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GPIO[0..7]" output
+			(at 198.12 25.4 90)
+			(uuid "191bfc1f-6686-40e6-985e-0b7e8d88ba52")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Z80HomeBrew"
+				(path "/5593e793-d133-45d0-a91e-72805049e474"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
