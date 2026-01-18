@@ -282,40 +282,58 @@ Code snippet
 
 ```
 Name     Z80_IO_DECODE;
-Partno   005;
-Date     2026-01-17;
-Revision 02;
+Partno   006;
+Date     2026-01-18;
+Revision 03;
 Designer HomeBrew;
 Company  Z80 Project;
 Assembly IO Board;
 Location U_IO_GAL;
 Device   g22v10;
 
+/* ----------------------------------------------------------- */
 /* Inputs */
+/* ----------------------------------------------------------- */
 Pin 1  = A7;
 Pin 2  = A6;
 Pin 3  = A5;
+
+/* Control Signals (Active Low on Bus) */
 Pin 4  = !IORQ;
 Pin 5  = !M1;
 Pin 6  = !RD;
 Pin 7  = !WR;
-/* Note: RESET is Active Low on Z80. 
-   Pin definition 'Pin 8 = !RESET' means the variable RESET is 1 when Pin 8 is 0. */
+
+/* RESET Logic:
+   The Z80 /RESET pin is Active Low.
+   Pin 8 = !RESET means the variable 'RESET' is TRUE when Pin 8 is LOW.
+*/
 Pin 8  = !RESET; 
 
-/* Outputs */
-Pin 23 = !CS_MEMBANK;
-Pin 22 = !CS_SIO1;
-Pin 21 = !CS_CTC;
-Pin 20 = !CS_CART_IO;
-Pin 19 = !CS_VDP;
-Pin 18 = !CS_SIO0;
-Pin 17 = !CS_SOUND;
+/* ----------------------------------------------------------- */
+/* Outputs (Active Low Chip Selects) */
+/* ----------------------------------------------------------- */
 
-/* Intermediate Terms */
-/* ValidIO requires IORQ(Low), M1(High/Inactive), and NOT Resetting */
-ValidIO = IORQ & !M1 & RESET;
+/* Memory Banking Latch Control */
+Pin 23 = !CS_MEMBANK_WR; /* Write: Clocks the 74HC273 (Rising Edge) */
+Pin 16 = !CS_MEMBANK_RD; /* Read:  Enables the 74HC244 (Active Low Level) */
 
+/* Peripherals */
+Pin 22 = !CS_SIO1;       /* SD Card / User Port */
+Pin 21 = !CS_CTC;        /* Counter/Timer */
+Pin 20 = !CS_CART_IO;    /* Cartridge Expansion */
+Pin 19 = !CS_VDP;        /* Video Processor */
+Pin 18 = !CS_SIO0;       /* USB / Console (Read/Write) + Controller Mirror (Read) */
+Pin 17 = !CS_SOUND;      /* Sound Generators (Write Only) */
+
+/* ----------------------------------------------------------- */
+/* Logic Equations */
+/* ----------------------------------------------------------- */
+
+/* ValidIO: IORQ is Low (Active), M1 is High (Inactive), NOT in Reset */
+ValidIO = IORQ & !M1 & !RESET;
+
+/* Address Decoding Blocks */
 Block_00 = !A7 & !A6 & !A5; /* $00-$1F */
 Block_20 = !A7 & !A6 &  A5; /* $20-$3F */
 Block_40 = !A7 &  A6 & !A5; /* $40-$5F */
@@ -324,12 +342,26 @@ Block_A0 =  A7 & !A6 &  A5; /* $A0-$BF */
 Block_C0 =  A7 &  A6 & !A5; /* $C0-$DF */
 Block_E0 =  A7 &  A6 &  A5; /* $E0-$FF */
 
-/* Equations */
-CS_MEMBANK  = ValidIO & Block_00 & WR;
-CS_SIO1     = ValidIO & Block_20;
-CS_CTC      = ValidIO & Block_40;
-CS_CART_IO  = ValidIO & Block_60;
-CS_VDP      = ValidIO & Block_A0;
-CS_SIO0     = ValidIO & (Block_C0 # (Block_E0 & RD)); /* Read $E0=Controller */
-CS_SOUND    = ValidIO & Block_E0 & WR;                /* Write $E0=Sound */
+
+/* 1. Memory Banking ($00-$1F) */
+/* Write: ValidIO + Block00 + Write Strobe */
+CS_MEMBANK_WR = ValidIO & Block_00 & WR;
+
+/* Read: ValidIO + Block00 + Read Strobe */
+CS_MEMBANK_RD = ValidIO & Block_00 & RD;
+
+
+/* 2. Standard Peripherals */
+CS_SIO1       = ValidIO & Block_20;
+CS_CTC        = ValidIO & Block_40;
+CS_CART_IO    = ValidIO & Block_60;
+CS_VDP        = ValidIO & Block_A0;
+
+
+/* 3. Shared Block ($E0-$FF) */
+/* CS_SIO0 is selected for $C0-$DF (Always) OR $E0-$FF (Read Only) */
+CS_SIO0       = ValidIO & (Block_C0 # (Block_E0 & RD)); 
+
+/* CS_SOUND is selected for $E0-$FF (Write Only) */
+CS_SOUND      = ValidIO & Block_E0 & WR;
 ```
