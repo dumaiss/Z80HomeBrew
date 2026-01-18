@@ -445,6 +445,10 @@
     [
       "2013015a-969c-4274-b0b3-984421ff4026",
       "USBPorts"
+    ],
+    [
+      "8e76c343-c4fb-4794-ad0c-dd359d6b97e7",
+      "Sound"
     ]
   ],
   "text_variables": {}

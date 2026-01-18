@@ -646,6 +646,108 @@
 		)
 	)
 	(sheet
+		(at 294.64 102.87)
+		(size 113.03 55.88)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8e76c343-c4fb-4794-ad0c-dd359d6b97e7")
+		(property "Sheetname" "Sound"
+			(at 294.64 102.1584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Sound.kicad_sch"
+			(at 294.64 159.3346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CLK3M6882" input
+			(at 294.64 129.54 180)
+			(uuid "b76edf2a-28c1-448a-b3fa-ef69ad6c82e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "D[0..7]" input
+			(at 294.64 135.89 180)
+			(uuid "ce7a5d0e-b9c3-4205-ab35-1deb0954117f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{CS_SOUND}" input
+			(at 294.64 146.05 180)
+			(uuid "15408fdd-7a8e-4d04-a402-866324ad95e0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{WAIT}" output
+			(at 294.64 116.84 180)
+			(uuid "c2f8ce70-9a24-4a54-a94f-0eacaa906fb8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{WR}" input
+			(at 294.64 110.49 180)
+			(uuid "31e98a61-c9b9-4206-958f-75698a8dc972")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "A0" input
+			(at 312.42 102.87 90)
+			(uuid "79d9b189-8ffd-41d2-bf24-ea02a42b2bdf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Z80HomeBrew"
+				(path "/5593e793-d133-45d0-a91e-72805049e474"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 177.8 34.29)
 		(size 92.71 202.565)
 		(exclude_from_sim no)
